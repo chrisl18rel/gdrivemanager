@@ -46,8 +46,12 @@
         .logo-icon {
             width: 48px;
             height: 48px;
+            background: white;
             border-radius: 12px;
-            object-fit: cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
         }
         
         h1 {
@@ -147,20 +151,47 @@
         .screenshot {
             padding: 4rem 0;
             background: white;
-            text-align: center;
         }
         
         .screenshot h3 {
             font-size: 2rem;
-            margin-bottom: 2rem;
+            margin-bottom: 3rem;
             color: #333;
+            text-align: center;
+        }
+        
+        .screenshots-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .screenshot-item {
+            background: #f8f9fa;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        
+        .screenshot-item:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 4px 16px rgba(0,0,0,0.15);
         }
         
         .screenshot-img {
-            max-width: 100%;
+            width: 100%;
             height: auto;
-            border-radius: 8px;
-            box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+            display: block;
+        }
+        
+        .screenshot-caption {
+            padding: 1rem;
+            background: white;
+            font-weight: 500;
+            color: #1a73e8;
+            text-align: center;
         }
         
         footer {
@@ -201,6 +232,10 @@
             .hero h2 {
                 font-size: 2rem;
             }
+            
+            .screenshots-grid {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
@@ -227,7 +262,7 @@
         <div class="container">
             <h2>Manage Your Google Drive Files Efficiently</h2>
             <p>A powerful dual-pane file manager that makes organizing, copying, and moving files in Google Drive fast and intuitive.</p>
-            <a href="https://workspace.google.com/marketplace" class="cta-button">Get it on Google Workspace Marketplace</a>
+            <a href="#" class="cta-button" onclick="return false;" style="opacity: 0.7; cursor: not-allowed;">Coming Soon</a>
         </div>
     </section>
     
@@ -272,7 +307,24 @@
     <section class="screenshot">
         <div class="container">
             <h3>See It In Action</h3>
-            <img src="screenshot.png" alt="Google Drive File Manager Screenshot" class="screenshot-img">
+            <div class="screenshots-grid">
+                <div class="screenshot-item">
+                    <img src="screenshot.png" alt="Main Interface" class="screenshot-img">
+                    <div class="screenshot-caption">Dual-Pane Interface</div>
+                </div>
+                <div class="screenshot-item">
+                    <img src="Bulkselect.png" alt="Bulk Selection" class="screenshot-img">
+                    <div class="screenshot-caption">File Selection & Bulk Operations</div>
+                </div>
+                <div class="screenshot-item">
+                    <img src="Copyingitems.png" alt="Copy Progress" class="screenshot-img">
+                    <div class="screenshot-caption">Copy/Move in Progress</div>
+                </div>
+                <div class="screenshot-item">
+                    <img src="Foldercreation.png" alt="Create Folder" class="screenshot-img">
+                    <div class="screenshot-caption">Folder Creation Dialog</div>
+                </div>
+            </div>
         </div>
     </section>
     
